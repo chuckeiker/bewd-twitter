@@ -48,9 +48,4 @@ class TweetsController < ApplicationController
   def tweet_params
     params.require(:tweet).permit(:message)
   end
-
-  def index_by_user
-    user = User.find_by(username: params[:username])
-    @tweets = user.tweets
-  end
 end
